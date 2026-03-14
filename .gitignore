@@ -1,0 +1,40 @@
+# Build artifacts
+bin/
+obj/
+out/
+TestResults/
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE folders
+.vs/
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# ASP.NET Core / secrets
+appsettings.Local.json
+appsettings.*.local.json
+secrets.json
+
+# EF Core bundle artifacts
+efbundle
+efbundle.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
