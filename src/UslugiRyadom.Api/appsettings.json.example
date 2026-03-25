@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=uslugi_ryadom_db;Username=postgres;Password=postgres"
+    "DefaultConnection": "Data Source=uslugi_ryadom.db"
   },
   "Jwt": {
     "Key": "SUPER_SECRET_KEY_AT_LEAST_32_CHARACTERS_LONG",

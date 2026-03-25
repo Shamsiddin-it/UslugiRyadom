@@ -4,9 +4,9 @@ Production-ready ASP.NET Core Web API MVP for the `Услуги рядом` serv
 
 ## Stack
 
-- .NET 8
+- .NET 10
 - ASP.NET Core Web API
-- PostgreSQL
+- SQLite
 - Entity Framework Core
 - ASP.NET Core Identity + JWT
 - FluentValidation
@@ -55,30 +55,25 @@ UslugiRyadom/
 ## Configuration
 
 1. Copy `src/UslugiRyadom.Api/appsettings.json.example` to `src/UslugiRyadom.Api/appsettings.json` if you want your own local settings.
-2. Update PostgreSQL connection string.
+2. Update SQLite connection string if you want the database file in another location.
 3. Set a strong JWT key with at least 32 characters.
 
 ## Run
 
-1. Create PostgreSQL database:
-
-```sql
-CREATE DATABASE uslugi_ryadom_db;
-```
-
-2. Restore packages:
+1. Restore packages and local tools:
 
 ```bash
 dotnet restore src/UslugiRyadom.Api/UslugiRyadom.Api.csproj
+dotnet tool restore
 ```
 
-3. Apply migrations:
+2. Apply migrations:
 
 ```bash
-dotnet ef database update --project src/UslugiRyadom.Api/UslugiRyadom.Api.csproj
+dotnet tool run dotnet-ef database update --project src/UslugiRyadom.Api/UslugiRyadom.Api.csproj
 ```
 
-4. Start the API:
+3. Start the API:
 
 ```bash
 dotnet run --project src/UslugiRyadom.Api/UslugiRyadom.Api.csproj
@@ -97,5 +92,6 @@ Swagger UI is available in Development mode.
 ## Notes
 
 - Seed runs on startup and is idempotent.
+- SQLite database file is created automatically from the `DefaultConnection` path.
 - JWT can be tested directly in Swagger using the `Authorize` button.
 - The architecture is prepared for future modules like reviews, chat, images, geolocation, and online payments.
